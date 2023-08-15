@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "686688409966",
+    "project_id": "dev-mandu",
+    "storage_bucket": "dev-mandu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686688409966:android:0fc42ca807382f0add497f",
+        "android_client_info": {
+          "package_name": "com.example.devmandu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "686688409966-n0m9qfo78the6e244qm9dv991s78ad2t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEX7rUMQIjyxU5UdIuYGUe6Jo4Emyf6q4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "686688409966-n0m9qfo78the6e244qm9dv991s78ad2t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
