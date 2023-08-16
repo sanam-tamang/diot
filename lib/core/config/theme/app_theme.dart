@@ -11,6 +11,7 @@ class AppTheme {
         seedColor: AppColors.primary,
       ),
       useMaterial3: true,
+      visualDensity: VisualDensity.adaptivePlatformDensity,
     );
   }
 }
