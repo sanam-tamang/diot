@@ -8,7 +8,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:devmandu/core/config/route/route_name.dart';
 import 'package:devmandu/features/internet_checker/widgets/internet_checker_widget.dart';
 import 'package:devmandu/features/navbar/blocs/change_navbar_index_cubit/change_navbar_indexer_cubit.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../article/pages/home_page.dart';
 import '../../profile/pages/profile_page.dart';
