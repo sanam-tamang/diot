@@ -1,9 +1,9 @@
 
 import '../../comment_article/widgets/comment_widget.dart';
-import 'package:devmandu/features/comment_article/widgets/show_comments.dart';
+import '../../comment_article/widgets/show_comments.dart';
 import 'package:flutter/material.dart';
 
-import 'package:devmandu/features/article/models/article.dart';
+import '../models/article.dart';
 
 import '../widgets/article_card.dart';
 

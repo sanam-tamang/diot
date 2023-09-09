@@ -1,8 +1,8 @@
 import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:devmandu/core/repositories/image_uploader_repository.dart';
-import 'package:devmandu/features/profile/repositories/user_collection_repository.dart';
+import '../../../core/repositories/image_uploader_repository.dart';
+import '../../profile/repositories/user_collection_repository.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../like_article/repositories/like_repository.dart';

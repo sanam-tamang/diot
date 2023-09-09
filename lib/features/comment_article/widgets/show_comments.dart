@@ -6,8 +6,8 @@ import '../../profile/blocs/collection_user_cubit/collection_user_cubit.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/widgets/custom_circular_progress_widget.dart';
-import 'package:devmandu/core/widgets/custom_error_message_widget.dart';
-import 'package:devmandu/features/comment_article/model/comment_model.dart';
+import '../../../core/widgets/custom_error_message_widget.dart';
+import '../model/comment_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/config/route/route_name.dart';

@@ -2,12 +2,12 @@ import 'package:collection/collection.dart';
 import '../../../core/config/route/route_name.dart';
 import '../../../core/model/user.dart';
 import '../../../core/widgets/annoted_region.dart';
-import 'package:devmandu/core/widgets/build_avatar_image.dart';
-import 'package:devmandu/core/widgets/custom_circular_progress_widget.dart';
-import 'package:devmandu/core/widgets/custom_error_message_widget.dart';
-import 'package:devmandu/features/auth/repositories/user_repository.dart';
-import 'package:devmandu/features/message/blocs/messaged_users_cubit/messaged_users_cubit.dart';
-import 'package:devmandu/features/message/models/chat_room.dart';
+import '../../../core/widgets/build_avatar_image.dart';
+import '../../../core/widgets/custom_circular_progress_widget.dart';
+import '../../../core/widgets/custom_error_message_widget.dart';
+import '../../auth/repositories/user_repository.dart';
+import '../blocs/messaged_users_cubit/messaged_users_cubit.dart';
+import '../models/chat_room.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

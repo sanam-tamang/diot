@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:developer';
 
-import 'package:devmandu/core/config/route/route_name.dart';
-import 'package:devmandu/core/widgets/message_with_button.dart';
-import 'package:devmandu/features/auth/repositories/user_repository.dart';
+import '../../../core/config/route/route_name.dart';
+import '../../../core/widgets/message_with_button.dart';
+import '../repositories/user_repository.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 

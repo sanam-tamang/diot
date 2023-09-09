@@ -1,14 +1,14 @@
 import 'route_name.dart';
-import 'package:devmandu/features/article/pages/article_detail.dart';
-import 'package:devmandu/features/article/pages/create_or_update_article_page.dart';
-import 'package:devmandu/features/auth/page/login.dart';
-import 'package:devmandu/features/auth/page/sign_up.dart';
-import 'package:devmandu/features/auth/page/verification_page.dart';
-import 'package:devmandu/features/load_rqm/load_rqm_page.dart';
-import 'package:devmandu/features/message/pages/chat_page.dart';
-import 'package:devmandu/features/navbar/pages/navbar.dart';
-import 'package:devmandu/features/profile/pages/edit_profile_page.dart';
-import 'package:devmandu/features/profile/pages/profile_page.dart';
+import '../../../features/article/pages/article_detail.dart';
+import '../../../features/article/pages/create_or_update_article_page.dart';
+import '../../../features/auth/page/login.dart';
+import '../../../features/auth/page/sign_up.dart';
+import '../../../features/auth/page/verification_page.dart';
+import '../../../features/load_rqm/load_rqm_page.dart';
+import '../../../features/message/pages/chat_page.dart';
+import '../../../features/navbar/pages/navbar.dart';
+import '../../../features/profile/pages/edit_profile_page.dart';
+import '../../../features/profile/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/interactive_image_view.dart';

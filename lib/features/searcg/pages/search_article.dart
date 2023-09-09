@@ -1,11 +1,11 @@
 import '../../../core/config/size.dart';
-import 'package:devmandu/core/widgets/annoted_region.dart';
-import 'package:devmandu/features/navbar/blocs/change_navbar_index_cubit/change_navbar_indexer_cubit.dart';
+import '../../../core/widgets/annoted_region.dart';
+import '../../navbar/blocs/change_navbar_index_cubit/change_navbar_indexer_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:devmandu/core/widgets/custom_circular_progress_widget.dart';
-import 'package:devmandu/features/article/widgets/article_card.dart';
+import '../../../core/widgets/custom_circular_progress_widget.dart';
+import '../../article/widgets/article_card.dart';
 
 import '../../article/blocs/article_read_cubit/article_read_cubit.dart';
 import '../../article/models/article.dart';

@@ -1,4 +1,4 @@
-import 'package:devmandu/core/widgets/custom_circular_progress_widget.dart';
+import '../widgets/custom_circular_progress_widget.dart';
 import 'package:flutter/material.dart';
 
 Future<void> circularLoadingDialog(BuildContext context) async {

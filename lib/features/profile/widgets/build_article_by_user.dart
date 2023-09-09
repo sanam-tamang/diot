@@ -2,12 +2,12 @@ import 'dart:developer';
 
 import '../../../core/config/size.dart';
 import '../../../core/config/theme/app_colors.dart';
-import 'package:devmandu/core/enum/article_pop_menu_type.dart';
-import 'package:devmandu/core/enum/loading_type.dart';
-import 'package:devmandu/core/widgets/no_article_widget.dart';
-import 'package:devmandu/core/widgets/text_with_icon.dart';
-import 'package:devmandu/features/article/models/article.dart';
-import 'package:devmandu/features/auth/repositories/user_repository.dart';
+import '../../../core/enum/article_pop_menu_type.dart';
+import '../../../core/enum/loading_type.dart';
+import '../../../core/widgets/no_article_widget.dart';
+import '../../../core/widgets/text_with_icon.dart';
+import '../../article/models/article.dart';
+import '../../auth/repositories/user_repository.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/model/user.dart';
@@ -15,7 +15,7 @@ import '../../../core/widgets/custom_circular_progress_widget.dart';
 import '../../article/repositories/article_repositoritories.dart';
 import '../../article/widgets/article_card.dart';
 
-class BuildArticlesByUser extends StatefulWidget {
+class BuildArticlesByUser extends StatelessWidget {
   const BuildArticlesByUser({
     super.key,
     required this.user,
@@ -23,23 +23,6 @@ class BuildArticlesByUser extends StatefulWidget {
 
   final User user;
 
-  @override
-  State<BuildArticlesByUser> createState() => _BuildArticlesByUserState();
-}
-
-class _BuildArticlesByUserState extends State<BuildArticlesByUser> {
-  
-  @override
-  void initState() {
-   
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    // _articleCudCubit.close();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +48,7 @@ class _BuildArticlesByUserState extends State<BuildArticlesByUser> {
            ),
            StreamBuilder(
                stream: ArticleRepositories.instance
-                   .getArticles(userId: widget.user.userId),
+                   .getArticles(userId: user.userId),
                builder: (context, snapshot) {
                  log("User nspshot ${snapshot.runtimeType}");
                  if (snapshot.connectionState == ConnectionState.waiting) {
@@ -96,12 +79,9 @@ class _BuildArticlesByUserState extends State<BuildArticlesByUser> {
                                items: UserRepository.getInstance()
                                            .currentUser
                                            ?.uid ==
-                                       widget.user.userId
+                                       user.userId
                                    ? _loginUserRoleFunctions(
                                        article: data[index],
-                                     
-                                            
-                                       
                                        )
                                    : [],
                              );
@@ -134,10 +114,6 @@ class _BuildArticlesByUserState extends State<BuildArticlesByUser> {
           icon: Icons.edit,
           text: "update",
         ),
-      
-       
-       
-         
       
       )
     ];

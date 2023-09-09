@@ -1,4 +1,4 @@
-import 'package:devmandu/core/enum/hero_tag_type.dart';
+import '../enum/hero_tag_type.dart';
 
 ///it helps to shows different hero tag string data
 ///it helpst to overcome the confict between different tags

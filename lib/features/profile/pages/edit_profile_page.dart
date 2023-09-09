@@ -4,9 +4,9 @@ import '../../../core/config/theme/app_colors.dart';
 import '../../../core/utils/image_picker.dart';
 import '../../../core/utils/toast_message.dart';
 import '../../../core/widgets/custom_elevated_button.dart';
-import 'package:devmandu/core/widgets/show_local_image_file.dart';
-import 'package:devmandu/features/profile/blocs/collection_user_du/collection_user_du_cubit.dart';
-import 'package:devmandu/features/profile/widgets/custom_text_field.dart';
+import '../../../core/widgets/show_local_image_file.dart';
+import '../blocs/collection_user_du/collection_user_du_cubit.dart';
+import '../widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

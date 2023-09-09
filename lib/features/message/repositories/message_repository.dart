@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'package:devmandu/features/auth/repositories/user_repository.dart';
-import 'package:devmandu/features/message/models/message.dart';
-import 'package:devmandu/features/profile/repositories/user_collection_repository.dart';
+import '../../auth/repositories/user_repository.dart';
+import '../models/message.dart';
+import '../../profile/repositories/user_collection_repository.dart';
 import 'package:uuid/uuid.dart';
 
 import '../models/chat_room.dart';

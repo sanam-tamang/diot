@@ -1,7 +1,7 @@
 import '../../../core/widgets/custom_circular_progress_widget.dart';
 import '../../../core/widgets/custom_elevated_button.dart';
-import 'package:devmandu/core/widgets/text_with_icon.dart';
-import 'package:devmandu/features/follower_following/blocs/following_cubit/following_cubit.dart';
+import '../../../core/widgets/text_with_icon.dart';
+import '../blocs/following_cubit/following_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/widgets/custom_circular_progress_widget.dart';
-import 'package:devmandu/features/article/blocs/article_read_cubit/article_read_cubit.dart';
+import '../blocs/article_read_cubit/article_read_cubit.dart';
 
 import '../../../core/enum/loading_type.dart';
 import '../../../core/widgets/app_logo.dart';

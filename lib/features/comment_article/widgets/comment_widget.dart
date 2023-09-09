@@ -7,9 +7,9 @@ import 'package:uuid/uuid.dart';
 import '../../../core/config/theme/app_colors.dart';
 import '../../../core/utils/custom_circualr_dialog.dart';
 import '../../../core/utils/toast_message.dart';
-import 'package:devmandu/features/article/models/article.dart';
-import 'package:devmandu/features/comment_article/blocs/article_comment_cud/article_comment_cud_cubit.dart';
-import 'package:devmandu/features/comment_article/model/comment_model.dart';
+import '../../article/models/article.dart';
+import '../blocs/article_comment_cud/article_comment_cud_cubit.dart';
+import '../model/comment_model.dart';
 
 class CommentWidget extends StatefulWidget {
   const CommentWidget(

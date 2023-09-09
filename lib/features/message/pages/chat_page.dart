@@ -5,8 +5,8 @@ import '../blocs/message_cubit/message_cubit.dart';
 import '../models/message.dart';
 import 'package:flutter/material.dart';
 
-import 'package:devmandu/features/message/models/chat_room.dart';
-import 'package:devmandu/features/message/repositories/message_repository.dart';
+import '../models/chat_room.dart';
+import '../repositories/message_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/config/theme/app_colors.dart';
