@@ -1,16 +1,20 @@
-# devmandu
+#Diot - a blog app
 
-A new Flutter project.
+####It has features of 
+<ul>
 
-## Getting Started
+<li>Sign up/ Sign In</li>
+<li>Article publishing with rich text</li>
+<li>User profile</li>
+<li>Follow/UnFollow</li>
+<li>Like and Comment article</li>
+<li>Chatting</li>
+<li>Searching & many more</li>
+<ul>
+<center>
+<img height ="600" src="project_image/114.jpg"><br>
+<img height ="600" src="project_image/111.jpg"><br>
+<img height ="600" src="project_image/112.jpg"><br>
+<img height ="600" src="project_image/113.jpg"><br>
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+</center>
