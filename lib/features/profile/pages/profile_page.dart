@@ -51,11 +51,12 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     log("I am building from profile");
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+   canPop: true,
+      onPopInvoked: (bool didPop)  {
         ///fetch the previous visited profile data
         context.read<CollectionUserCubit>().getPreviouslyVisitedUser();
-        return true;
+        return;
       },
       child: Scaffold(
         body: CustomAnnotatedRegion(
