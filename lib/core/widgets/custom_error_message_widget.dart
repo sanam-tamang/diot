@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class CustomErrorMessageWidget extends StatelessWidget {
   const CustomErrorMessageWidget({
-    Key? key,
+    super.key,
     required this.message,
-  }) : super(key: key);
+  });
   final String message;
 
   @override

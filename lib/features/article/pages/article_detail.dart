@@ -9,9 +9,9 @@ import '../widgets/article_card.dart';
 
 class ArticleDetailPage extends StatefulWidget {
   const ArticleDetailPage({
-    Key? key,
+    super.key,
     required this.article,
-  }) : super(key: key);
+  });
   final GetArticle article;
   @override
   State<ArticleDetailPage> createState() => _ArticleDetailPageState();

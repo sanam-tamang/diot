@@ -10,11 +10,11 @@ import '../bloc/article_like_cubit/article_like_cubit.dart';
 
 class LikeButton extends StatelessWidget {
   const LikeButton({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.isLiked,
     required this.likeCount,
-  }) : super(key: key);
+  });
   final VoidCallback? onPressed;
   final bool isLiked;
   final int likeCount;

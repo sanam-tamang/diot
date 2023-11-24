@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 
 class CustomReadMore extends StatelessWidget {
-  const CustomReadMore(this.text, {Key? key, this.trimLines = 2, this.style})
-      : super(key: key);
+  const CustomReadMore(this.text, {super.key, this.trimLines = 2, this.style});
   final String text;
   final int trimLines;
   final TextStyle? style;

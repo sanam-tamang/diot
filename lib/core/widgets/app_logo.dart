@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 class AppLogo extends StatefulWidget {
   const AppLogo({
-    Key? key,
+    super.key,
     this.center = false,
-  }) : super(key: key);
+  });
   final bool center;
   @override
   State<AppLogo> createState() => _AppLogoState();

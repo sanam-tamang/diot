@@ -16,9 +16,9 @@ import '../blocs/article_comment_read/article_comment_read_cubit.dart';
 
 class ShowComments extends StatefulWidget {
   const ShowComments({
-    Key? key,
+    super.key,
     required this.articleId,
-  }) : super(key: key);
+  });
   final String articleId;
 
   @override
@@ -56,9 +56,8 @@ class _ShowCommentsState extends State<ShowComments> {
 
 class _BuildComments extends StatefulWidget {
   const _BuildComments({
-    Key? key,
     required this.comments,
-  }) : super(key: key);
+  });
   final List<GetComment?> comments;
 
   @override

@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 
 class ShowLocalImageFile extends StatefulWidget {
   const ShowLocalImageFile({
-    Key? key,
+    super.key,
     required this.imageFile,
     required this.deleteImage,
     this.aspectRadio = 1 / 0.7,
     this.fit = BoxFit.contain,
-  }) : super(key: key);
+  });
   final Uint8List? imageFile;
   final VoidCallback deleteImage;
   final double aspectRadio;

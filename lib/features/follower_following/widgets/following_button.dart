@@ -7,9 +7,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FollowingButton extends StatefulWidget {
   const FollowingButton({
-    Key? key,
+    super.key,
     required this.userId,
-  }) : super(key: key);
+  });
 
   ///currently visited profile id
   final String userId;

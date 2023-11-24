@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 
 class CustomCacheNetworkImage extends StatefulWidget {
   const CustomCacheNetworkImage({
-    Key? key,
+    super.key,
     this.imageUrl,
     this.fit = BoxFit.contain,
-  }) : super(key: key);
+  });
   final String? imageUrl;
   final BoxFit fit;
 

@@ -7,9 +7,9 @@ import '../models/article.dart';
 
 class BuildArticles extends StatelessWidget {
   const BuildArticles({
-    Key? key,
+    super.key,
     required this.articles,
-  }) : super(key: key);
+  });
   final List<GetArticle> articles;
   @override
   Widget build(BuildContext context) {

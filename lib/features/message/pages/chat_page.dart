@@ -14,9 +14,9 @@ import '../../../core/config/theme/app_colors.dart';
 ///where interaction between two people going on chatting
 class ChatPage extends StatefulWidget {
   const ChatPage({
-    Key? key,
+    super.key,
     required this.chatRoomIndividual,
-  }) : super(key: key);
+  });
   final ChatRoomIndividual chatRoomIndividual;
 
   @override
@@ -141,10 +141,10 @@ class _BuidMessages extends StatelessWidget {
 
 class SendMessageTextFieldAndButton extends StatefulWidget {
   const SendMessageTextFieldAndButton({
-    Key? key,
+    super.key,
     required this.controller,
     required this.chatRoomIndividual,
-  }) : super(key: key);
+  });
   final TextEditingController controller;
   final ChatRoomIndividual chatRoomIndividual;
 

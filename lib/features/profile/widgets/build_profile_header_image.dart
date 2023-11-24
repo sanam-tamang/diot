@@ -14,9 +14,9 @@ import '../../follower_following/widgets/following_button.dart';
 
 class BuildProfileHeaderImage extends StatefulWidget {
   const BuildProfileHeaderImage({
-    Key? key,
+    super.key,
     required this.user,
-  }) : super(key: key);
+  });
 
   final local.User user;
 

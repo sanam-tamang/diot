@@ -6,10 +6,10 @@ import 'custom_cache_network_image.dart';
 
 class InteractiveImageViewerPage extends StatelessWidget {
   const InteractiveImageViewerPage({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.tag,
-  }) : super(key: key);
+  });
   final String imageUrl;
 
   ///if you doesnot want hero animation you could skip this

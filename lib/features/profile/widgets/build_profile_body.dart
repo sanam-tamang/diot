@@ -10,9 +10,9 @@ import '../../follower_following/blocs/following_and_follower_count/following_an
 
 class BuildProfileBody extends StatefulWidget {
   const BuildProfileBody({
-    Key? key,
+    super.key,
     required this.user,
-  }) : super(key: key);
+  });
 
   final User user;
 

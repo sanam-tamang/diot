@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 class FollowActionCount extends StatelessWidget {
   const FollowActionCount({
-    Key? key,
+    super.key,
     required this.count,
     required this.text,
-  }) : super(key: key);
+  });
   final int count;
   final String text;
   @override

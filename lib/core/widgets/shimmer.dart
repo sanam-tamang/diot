@@ -150,9 +150,9 @@ class TitlePlaceholder extends StatelessWidget {
 
 class BodyPlaceholder extends StatelessWidget {
   const BodyPlaceholder({
-    Key? key,
+    super.key,
     required this.height,
-  }) : super(key: key);
+  });
   final double height;
   @override
   Widget build(BuildContext context) {

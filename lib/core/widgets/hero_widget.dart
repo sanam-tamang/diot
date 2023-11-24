@@ -9,11 +9,11 @@ import '../utils/hero_builder.dart';
 /// 
 class CustomHeroWidget extends StatelessWidget {
   const CustomHeroWidget({
-    Key? key,
+    super.key,
     required this.tag,
     required this.payload,
     required this.child,
-  }) : super(key: key);
+  });
   final HeroTagType tag;
   final String payload;
   final Widget child;

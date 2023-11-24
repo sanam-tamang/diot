@@ -18,9 +18,9 @@ import '../widgets/build_profile_header_image.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({
-    Key? key,
+    super.key,
     this.userId,
-  }) : super(key: key);
+  });
   final String? userId;
 
   @override
@@ -83,9 +83,9 @@ class _ProfilePageState extends State<ProfilePage> {
 
 class BuildProfile extends StatelessWidget {
   const BuildProfile({
-    Key? key,
+    super.key,
     required this.user,
-  }) : super(key: key);
+  });
 
   final User user;
 

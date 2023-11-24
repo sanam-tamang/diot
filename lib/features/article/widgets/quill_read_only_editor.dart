@@ -76,22 +76,34 @@ class _QuillReadonlyEditorState extends State<QuillReadonlyEditor> {
     final data = widget.maxLines != null
         ? _getQuillData(widget.originalContent)
         : jsonDecode(widget.originalContent);
-    return QuillEditor(
-      controller: QuillController(
+    return QuillProvider(
+      configurations: QuillConfigurations(
+        controller: QuillController(
         document: Document.fromJson(data),
         selection: TextSelection.fromPosition(const TextPosition(offset: 0)),
       ),
-      readOnly: true,
-      scrollable: false,
-      showCursor: false,
-      enableInteractiveSelection: false,
-      enableSelectionToolbar: false,
-      focusNode: FocusNode(canRequestFocus: false),
-      autoFocus: false,
-      scrollPhysics: const NeverScrollableScrollPhysics(),
-      expands: false,
-      padding: EdgeInsets.zero,
-      scrollController: ScrollController(),
+        sharedConfigurations: const QuillSharedConfigurations(
+          locale: Locale('en'),
+        ),
+
+        
+      ), child:  QuillEditor.basic(
+          configurations: const QuillEditorConfigurations(
+             readOnly: true,
+        scrollable: false,
+        showCursor: false,
+        enableInteractiveSelection: false,
+        enableSelectionToolbar: false,
+       
+        autoFocus: false,
+        scrollPhysics:  NeverScrollableScrollPhysics(),
+        expands: false,
+        padding: EdgeInsets.zero,
+      
+          )),
     );
+  
+    
+  
   }
 }

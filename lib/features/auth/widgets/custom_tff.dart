@@ -5,7 +5,7 @@ import '../../../core/config/theme/app_colors.dart';
 
 class CustomTff extends StatelessWidget {
   const CustomTff({
-    Key? key,
+    super.key,
     required this.controller,
     required this.label,
     required this.hintText,
@@ -15,7 +15,7 @@ class CustomTff extends StatelessWidget {
     this.textCapitalization,
     this.textInputType = TextInputType.text,
     this.prefixIcon,
-  }) : super(key: key);
+  });
   final TextEditingController controller;
   final String label;
   final String hintText;

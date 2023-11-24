@@ -21,11 +21,10 @@ import 'image_manupulated_cached_image.dart';
 
 class ArticleCard extends StatelessWidget {
   const ArticleCard(
-      {Key? key,
+      {super.key,
       required this.article,
       this.isDetailPage = false,
-      this.items = const []})
-      : super(key: key);
+      this.items = const []});
 
   final GetArticle article;
   final List<PopupMenuItem<dynamic>> items;
@@ -73,10 +72,9 @@ class _BuildArticleHeader extends StatelessWidget {
   final GetArticle article;
   final List<PopupMenuItem> items;
   const _BuildArticleHeader({
-    Key? key,
     required this.article,
     required this.items,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -164,10 +162,9 @@ class _BuildArticleBody extends StatelessWidget {
   final GetArticle article;
   final bool isDetailPage;
   const _BuildArticleBody({
-    Key? key,
     required this.article,
     required this.isDetailPage,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

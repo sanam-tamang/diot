@@ -1,14 +1,14 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+
 import 'package:flutter/material.dart';
 
 class MessageWithButton extends StatelessWidget {
   const MessageWithButton({
-    Key? key,
+    super.key,
     required this.message,
     required this.navigateTo,
     required this.routeName,
     this.afterRoute,
-  }) : super(key: key);
+  });
   final String message;
   final VoidCallback navigateTo;
   final String routeName;

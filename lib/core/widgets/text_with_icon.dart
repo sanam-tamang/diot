@@ -4,12 +4,12 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class TextWithIcon extends StatelessWidget {
   const TextWithIcon({
-    Key? key,
+    super.key,
     required this.text,
     required this.icon,
     this.color = Colors.black,
     this.center = false,
-  }) : super(key: key);
+  });
   final String text;
   final IconData icon;
   final Color color;

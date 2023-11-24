@@ -4,10 +4,10 @@ import 'package:flutter/services.dart';
 
 class CustomAnnotatedRegion extends StatelessWidget {
   const CustomAnnotatedRegion({
-    Key? key,
+    super.key,
     required this.child,
     this.color = Colors.white,
-  }) : super(key: key);
+  });
   final Widget child;
   final Color color;
   @override

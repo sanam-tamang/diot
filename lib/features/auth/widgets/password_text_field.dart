@@ -6,11 +6,11 @@ import 'package:devmandu/features/auth/widgets/custom_tff.dart';
 
 class PasswordTextField extends StatelessWidget {
   const PasswordTextField({
-    Key? key,
+    super.key,
     required this.controller,
     required this.label,
     required this.hintText,
-  }) : super(key: key);
+  });
   final TextEditingController controller;
   final String label;
   final String hintText;

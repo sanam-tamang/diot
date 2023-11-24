@@ -21,9 +21,9 @@ import '../model/profile_user_model.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({
-    Key? key,
+    super.key,
     required this.user,
-  }) : super(key: key);
+  });
   final User user;
 
   @override

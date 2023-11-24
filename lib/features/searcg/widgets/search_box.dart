@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 
 class SearchBox extends StatelessWidget {
   const SearchBox({
-    Key? key,
+    super.key,
     required this.controller,
     this.focusNode,
     this.onChanged,
     required this.onSubmit,
     required this.hintText,
-  }) : super(key: key);
+  });
   final TextEditingController controller;
   final FocusNode? focusNode;
   final void Function(String)? onChanged;

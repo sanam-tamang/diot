@@ -4,10 +4,10 @@ import '../../../core/widgets/custom_cache_network_image.dart';
 
 class ManupulatedCachedNetworkImage extends StatelessWidget {
   const ManupulatedCachedNetworkImage({
-    Key? key,
+    super.key,
     required this.imageUrl,
     this.borderRadius = 16,
-  }) : super(key: key);
+  });
   final String? imageUrl;
   final double borderRadius;
   @override

@@ -13,11 +13,10 @@ import '../model/comment_model.dart';
 
 class CommentWidget extends StatefulWidget {
   const CommentWidget(
-      {Key? key,
+      {super.key,
       required this.article,
       this.autoFocusCommentField = false,
-      this.pop = false})
-      : super(key: key);
+      this.pop = false});
   final GetArticle article;
   final bool autoFocusCommentField;
 

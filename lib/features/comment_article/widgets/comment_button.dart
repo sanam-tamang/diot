@@ -7,10 +7,10 @@ import '../../../core/config/size.dart';
 
 class CommentButton extends StatelessWidget {
   const CommentButton({
-    Key? key,
+    super.key,
     this.onPressed,
     required this.commentCount,
-  }) : super(key: key);
+  });
   final VoidCallback? onPressed;
   final int commentCount;
   @override

@@ -21,9 +21,9 @@ import '../widgets/custom_quill_editor.dart';
 
 class CreateOrUpdateArticlePage extends StatefulWidget {
   const CreateOrUpdateArticlePage({
-    Key? key,
+    super.key,
     this.article,
-  }) : super(key: key);
+  });
   final GetArticle? article;
   @override
   State<CreateOrUpdateArticlePage> createState() =>
@@ -119,9 +119,14 @@ class _CreateOrUpdateArticlePageState extends State<CreateOrUpdateArticlePage> {
               ),
             ),
           ),
-          bottomSheet: MediaQuery.of(context).viewInsets.bottom > 0
-              ? _buildQuillToolbar()
-              : const SizedBox.shrink()),
+
+          //TODO:: 
+          // bottomSheet: MediaQuery.of(context).viewInsets.bottom > 0
+          //     ? _buildQuillToolbar()
+          //     : const SizedBox.shrink()
+              
+              
+              ),
     );
   }
 
@@ -207,36 +212,41 @@ class _CreateOrUpdateArticlePageState extends State<CreateOrUpdateArticlePage> {
     );
   }
 
-  Widget _buildQuillToolbar() {
-    return Builder(builder: (context) {
-      return BlocBuilder<QuilToolbarVisibibilityCubit,
-          QuilToolbarVisibibilityState>(
-        builder: (context, state) {
-          return Container(
-            color: Colors.grey.shade100,
-            padding: const EdgeInsets.only(top: 2, right: 4)
-                .copyWith(bottom: MediaQuery.of(context).viewPadding.bottom),
-            child: Visibility(
-              visible: state.isKeyboardVisibile,
-              child: quill.QuillToolbar.basic(
-                controller: _contentController,
-                multiRowsDisplay: false,
-                showRedo: false,
-                showUndo: false,
-                showLink: false,
-                showSearchButton: false,
-                showSubscript: false,
-                showSuperscript: false,
-                showInlineCode: false,
-                showListNumbers: false,
-                showFontSize: false,
-              ),
-            ),
-          );
-        },
-      );
-    });
-  }
+
+  //TODO:: need to integrate quill toolbar
+
+  // Widget _buildQuillToolbar() {
+  //   return Builder(builder: (context) {
+  //     return BlocBuilder<QuilToolbarVisibibilityCubit,
+  //         QuilToolbarVisibibilityState>(
+  //       builder: (context, state) {
+  //         return Container(
+  //           color: Colors.grey.shade100,
+  //           padding: const EdgeInsets.only(top: 2, right: 4)
+  //               .copyWith(bottom: MediaQuery.of(context).viewPadding.bottom),
+  //           child: Visibility(
+  //             visible: state.isKeyboardVisibile,
+  //             child: quill.QuillToolbar.basic(
+  //               controller: _contentController,
+  //               multiRowsDisplay: false,
+  //               showRedo: false,
+  //               showUndo: false,
+  //               showLink: false,
+  //               showSearchButton: false,
+  //               showSubscript: false,
+  //               showSuperscript: false,
+  //               showInlineCode: false,
+  //               showListNumbers: false,
+  //               showFontSize: false,
+  //             ),
+  //           ),
+  //         );
+  //       },
+  //     );
+  //   });
+  // }
+
+
 
   void _createArticle() {
     final plainContent = _contentController.document.toPlainText();

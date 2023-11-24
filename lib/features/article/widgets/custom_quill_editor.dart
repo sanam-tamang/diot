@@ -4,13 +4,13 @@ import 'package:flutter_quill/flutter_quill.dart';
 
 class CustomQuillEditor extends StatelessWidget {
   const CustomQuillEditor({
-    Key? key,
+    super.key,
     required this.controller,
     required this.hintText,
     required this.onTap,
     this.showCursor = true,
     required this.focusNode,
-  }) : super(key: key);
+  });
   final QuillController controller;
   final String hintText;
   final VoidCallback onTap;
@@ -18,28 +18,33 @@ class CustomQuillEditor extends StatelessWidget {
   final FocusNode focusNode;
   @override
   Widget build(BuildContext context) {
-    return QuillEditor(
-      onTapDown: (details, p1) {
-        onTap();
-        return false;
-      },
-      onTapUp: (details, p1) {
-        onTap();
-        return false;
-      },
-      controller: controller,
-      scrollController: ScrollController(),
-      scrollable: true,
-      focusNode: focusNode,
-      autoFocus: false,
-      readOnly: false,
-      expands: false,
-      showCursor: showCursor,
-      placeholder: hintText,
-      padding: EdgeInsets.zero,
-      keyboardAppearance: Brightness.light,
-      locale: const Locale('en'),
-      embedBuilders: const [],
+    return QuillProvider(
+      configurations: QuillConfigurations(
+        controller: controller,
+        sharedConfigurations: const QuillSharedConfigurations(
+          locale: Locale('en'),
+        ),
+      ),
+      child: Column(
+        children: [
+          const QuillToolbar(),
+          Expanded(
+            child: QuillEditor.basic(
+              configurations: QuillEditorConfigurations(
+                scrollable: true,
+                autoFocus: false,
+                readOnly: false,
+                expands: false,
+                showCursor: showCursor,
+                placeholder: hintText,
+                padding: EdgeInsets.zero,
+                keyboardAppearance: Brightness.light,
+                embedBuilders: const [],
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

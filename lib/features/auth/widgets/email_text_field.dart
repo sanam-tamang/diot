@@ -6,11 +6,11 @@ import 'package:flutter/material.dart';
 
 class EmailTextField extends StatelessWidget {
   const EmailTextField({
-    Key? key,
+    super.key,
     required this.controller,
     required this.label,
     required this.hintText,
-  }) : super(key: key);
+  });
   final TextEditingController controller;
   final String label;
   final String hintText;

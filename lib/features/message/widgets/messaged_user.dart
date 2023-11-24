@@ -8,9 +8,9 @@ import '../../../core/widgets/build_avatar_image.dart';
 
 class MessagedUser extends StatelessWidget {
   const MessagedUser({
-    Key? key,
+    super.key,
     required this.chatRoomIndividual,
-  }) : super(key: key);
+  });
   final ChatRoomIndividual chatRoomIndividual;
   @override
   Widget build(BuildContext context) {

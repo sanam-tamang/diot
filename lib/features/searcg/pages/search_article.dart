@@ -94,10 +94,9 @@ class _SearchArticlePageState extends State<SearchArticlePage> {
 
 class _BuildArticleFilteredList extends StatelessWidget {
   const _BuildArticleFilteredList({
-    Key? key,
     required this.filterController,
     required this.articles,
-  }) : super(key: key);
+  });
 
   final TextEditingController filterController;
   final List<GetArticle> articles;

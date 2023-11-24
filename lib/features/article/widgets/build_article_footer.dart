@@ -16,10 +16,10 @@ import '../../like_article/widgets/like_button.dart';
 
 class BuildArticleFooter extends StatefulWidget {
   const BuildArticleFooter({
-    Key? key,
+    super.key,
     required this.article,
     this.isDetailPage = false,
-  }) : super(key: key);
+  });
   final GetArticle article;
   final bool isDetailPage;
 

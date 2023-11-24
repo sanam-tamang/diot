@@ -9,9 +9,9 @@ import '../blocs/internet_status_cubit/internet_status_cubit.dart';
 
 class InternetCheckerWidget extends StatelessWidget {
   const InternetCheckerWidget({
-    Key? key,
+    super.key,
     required this.child,
-  }) : super(key: key);
+  });
   final Widget child;
 
   @override

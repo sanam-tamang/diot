@@ -7,10 +7,10 @@ import '../config/theme/app_colors.dart';
 ///network avatar image
 class BuildAvatarImageNetwork extends StatelessWidget {
   const BuildAvatarImageNetwork({
-    Key? key,
+    super.key,
     required this.image,
     this.radius = 30,
-  }) : super(key: key);
+  });
   final String? image;
   final double radius;
   @override
@@ -35,10 +35,10 @@ class BuildAvatarImageNetwork extends StatelessWidget {
 ///network avatar image
 class BuildAvatarImageLocal extends StatelessWidget {
   const BuildAvatarImageLocal({
-    Key? key,
+    super.key,
     required this.image,
     this.radius = 30,
-  }) : super(key: key);
+  });
   final Uint8List? image;
   final double radius;
   @override
