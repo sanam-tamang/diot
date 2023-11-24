@@ -1,4 +1,4 @@
-import '../../../core/widgets/annoted_region.dart';
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,34 +16,26 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: NestedScrollView(
-          headerSliverBuilder: (context, innerBoxIsScrolled) {
-            return [
-              const SliverAppBar(
-                floating: true,
-                snap: true,
-                title: AppLogo(),
-              )
-            ];
+      appBar: AppBar(
+        title:const  AppLogo(),
+      ),
+      body: NestedScrollView(
+        headerSliverBuilder: (context, innerBoxIsScrolled) {
+          return [];
+        },
+        body: BlocBuilder<ArticleReadCubit, ArticleReadState>(
+          builder: (context, state) {
+            if (state is ArticleReadLoading || state is ArticleReadInitial) {
+              return const CustomCircularProgressIndicator(
+                type: LoadingType.article,
+              );
+            } else if (state is ArticleReadFailure) {
+              return Text(state.message);
+            } else if (state is ArticleReadLoaded) {
+              return BuildArticles(articles: state.article);
+            }
+            return const SizedBox.shrink();
           },
-          body: CustomAnnotatedRegion(
-            child: BlocBuilder<ArticleReadCubit, ArticleReadState>(
-              builder: (context, state) {
-                if (state is ArticleReadLoading ||
-                    state is ArticleReadInitial) {
-                  return const CustomCircularProgressIndicator(
-                    type: LoadingType.article,
-                  );
-                } else if (state is ArticleReadFailure) {
-                  return Text(state.message);
-                } else if (state is ArticleReadLoaded) {
-                  return BuildArticles(articles: state.article);
-                }
-                return const SizedBox.shrink();
-              },
-            ),
-          ),
         ),
       ),
     );

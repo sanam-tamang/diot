@@ -10,12 +10,14 @@ class CustomQuillEditor extends StatelessWidget {
     required this.onTap,
     this.showCursor = true,
     required this.focusNode,
+  
   });
   final QuillController controller;
   final String hintText;
   final VoidCallback onTap;
   final bool showCursor;
   final FocusNode focusNode;
+
   @override
   Widget build(BuildContext context) {
     return QuillProvider(
@@ -27,20 +29,29 @@ class CustomQuillEditor extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const QuillToolbar(),
+         
           Expanded(
-            child: QuillEditor.basic(
+            child: QuillEditor(
               configurations: QuillEditorConfigurations(
-                scrollable: true,
-                autoFocus: false,
-                readOnly: false,
-                expands: false,
-                showCursor: showCursor,
-                placeholder: hintText,
-                padding: EdgeInsets.zero,
-                keyboardAppearance: Brightness.light,
-                embedBuilders: const [],
-              ),
+                  scrollable: true,
+                  autoFocus: false,
+                  readOnly: false,
+                  expands: false,
+                  showCursor: showCursor,
+                  placeholder: hintText,
+                  padding: EdgeInsets.zero,
+                  keyboardAppearance: Brightness.light,
+                  embedBuilders: const [],
+                  onTapDown: (tapdown, offset) {
+                    onTap();
+                    return false;
+                  },
+                  onTapUp: (tapup, offset) {
+                    onTap();
+                    return false;
+                  }),
+              focusNode: focusNode,
+              scrollController: ScrollController(),
             ),
           )
         ],

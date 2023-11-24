@@ -21,9 +21,8 @@ class ManupulatedCachedNetworkImage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(borderRadius),
                 child: Container(
                   constraints: BoxConstraints(
-                    minHeight: 100, 
-                    maxHeight: MediaQuery.of(context).size.height *
-                        0.6, 
+                    minHeight: 100,
+                    maxHeight: MediaQuery.of(context).size.height * 0.6,
                   ),
                   child: CustomCacheNetworkImage(
                     imageUrl: imageUrl,
@@ -41,7 +40,10 @@ class ManupulatedCachedNetworkImage extends StatelessWidget {
                     gradient: const LinearGradient(
                       begin: Alignment.bottomCenter,
                       end: Alignment.topCenter,
-                      colors: [Colors.black26, Colors.transparent],
+                      colors: [
+                        Colors.black38,
+                        Colors.transparent,
+                      ],
                     ),
                   ),
                 ),

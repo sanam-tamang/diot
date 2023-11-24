@@ -21,8 +21,11 @@ class MessagedUser extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 12),
         child: Row(
           children: [
-            BuildAvatarImageNetwork(
-              image: chatRoomIndividual.messagedUser.image,
+            GestureDetector(
+              onTap: () => _gotoProfile(context, chatroom: chatRoomIndividual),
+              child: BuildAvatarImageNetwork(
+                image: chatRoomIndividual.messagedUser.image,
+              ),
             ),
             Flexible(
               flex: 3,
@@ -46,5 +49,11 @@ class MessagedUser extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _gotoProfile(BuildContext context,
+      {required ChatRoomIndividual chatroom}) {
+    Navigator.of(context).pushNamed(AppRouteName.profile,
+        arguments: {'userId': chatroom.messagedUser.userId});
   }
 }

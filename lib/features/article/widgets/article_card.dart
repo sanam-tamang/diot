@@ -39,14 +39,7 @@ class ArticleCard extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 2, left: 2, right: 2),
       decoration: BoxDecoration(
           color: AppColors.articleBackground,
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-                color: Theme.of(context).colorScheme.tertiary.withOpacity(0.25),
-                blurRadius: 100,
-                spreadRadius: -5,
-                offset: const Offset(0, 0))
-          ]),
+          borderRadius: BorderRadius.circular(8)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -116,8 +109,6 @@ class _BuildArticleHeader extends StatelessWidget {
         Tooltip(message: 'more vert', child: _moreVertButton(context)),
       ],
     );
-  
-  
   }
 
   PopupMenuButton<dynamic> _moreVertButton(BuildContext context) {
@@ -184,25 +175,33 @@ class _BuildArticleBody extends StatelessWidget {
                       ? HeroTagType.noAnimation
                       : HeroTagType.article,
                   payload: article.image ?? "",
-                  child:
-                      ManupulatedCachedNetworkImage(imageUrl: article.image))),
-          article.title == null || article.title == ""
-              ? const SizedBox.shrink()
-              : Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 6),
-                  child: Text(
-                    article.title!,
-                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: Colors.black87, fontWeight: FontWeight.w500),
-                  ),
-                ),
+                  child: Stack(
+                    children: [
+                      ManupulatedCachedNetworkImage(imageUrl: article.image),
+                      Positioned(
+                          left: 8,
+                          bottom: 12,
+                          right: 8,
+                          child:
+                              _articleTitle(context, textColor: Colors.white))
+                    ],
+                  ))),
+
+          article.image == null
+              ? _articleTitle(context)
+              : const SizedBox.shrink(),
+          article.image != null
+              ? const SizedBox(height: 4)
+              : const SizedBox.shrink(),
 
           ///if empty then it comes as
           ///'[{"insert":"\n"}]'
           article.content == '[{"insert":"\\n"}]'
               ? const SizedBox.shrink()
               : Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 6),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 6,
+                  ),
                   child: QuillReadonlyEditor(
                     originalContent: article.content!,
                     maxLines: isDetailPage
@@ -225,5 +224,21 @@ class _BuildArticleBody extends StatelessWidget {
   void _gotoInteractiveViewer(BuildContext context) {
     Navigator.of(context).pushNamed(AppRouteName.interactiveViewImage,
         arguments: {"imageUrl": article.image, "tag": HeroTagType.article});
+  }
+
+  Widget _articleTitle(BuildContext context,
+      {Color? textColor = Colors.black87}) {
+    return article.title == null || article.title == ""
+        ? const SizedBox.shrink()
+        : Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 6),
+            child: Text(
+              article.title!,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleLarge
+                  ?.copyWith(color: textColor, fontWeight: FontWeight.w500),
+            ),
+          );
   }
 }

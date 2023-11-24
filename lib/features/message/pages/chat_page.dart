@@ -1,3 +1,6 @@
+import 'package:devmandu/core/config/route/route_name.dart';
+import 'package:devmandu/core/widgets/build_avatar_image.dart';
+
 import '../../../core/widgets/custom_circular_progress_widget.dart';
 import '../../../core/widgets/custom_error_message_widget.dart';
 import '../../auth/repositories/user_repository.dart';
@@ -58,7 +61,26 @@ class _ChatPageState extends State<ChatPage> {
         return [
           SliverAppBar(
             scrolledUnderElevation: 0.0,
-            title: Text(widget.chatRoomIndividual.messagedUser.name),
+            title: Row(
+              children: [
+                GestureDetector(
+                  onTap: () => _gotoProfile(context,
+                      chatroom: widget.chatRoomIndividual),
+                  child: BuildAvatarImageNetwork(
+                    radius: 20,
+                    image: widget.chatRoomIndividual.messagedUser.image,
+                  ),
+                ),
+                const SizedBox(
+                  width: 15,
+                ),
+                Text(
+                  widget.chatRoomIndividual.messagedUser.name,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ),
             pinned: true,
             backgroundColor: Colors.grey.shade200.withOpacity(0.9),
             elevation: 4,
@@ -81,6 +103,12 @@ class _ChatPageState extends State<ChatPage> {
         ),
       )),
     );
+  }
+
+  void _gotoProfile(BuildContext context,
+      {required ChatRoomIndividual chatroom}) {
+    Navigator.of(context).pushNamed(AppRouteName.profile,
+        arguments: {'userId': chatroom.messagedUser.userId});
   }
 }
 

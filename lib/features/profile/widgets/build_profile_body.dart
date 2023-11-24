@@ -55,7 +55,7 @@ class _BuildProfileBodyState extends State<BuildProfileBody> {
   }
 
   Widget _bio() {
-    return widget.user.bio == null
+    return widget.user.bio == null || widget.user.bio == ""
         ? const SizedBox.shrink()
         : Container(
             margin: const EdgeInsets.symmetric(vertical: 8),
@@ -63,7 +63,7 @@ class _BuildProfileBodyState extends State<BuildProfileBody> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Intro",
+                  "Bio",
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
                 Text(widget.user.bio!.replaceNewLineUpTo2(),

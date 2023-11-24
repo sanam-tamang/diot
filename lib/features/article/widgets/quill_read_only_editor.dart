@@ -25,7 +25,7 @@ class QuillReadonlyEditor extends StatefulWidget {
 class _QuillReadonlyEditorState extends State<QuillReadonlyEditor> {
   List _getQuillData(String quillData) {
     int totalLengthOfQuill = 0;
-    int totalLengthLimit = 160;
+    int totalLengthLimit = 80;
     int totalNewLine = 0;
     int totalNewLineLimit = widget.maxLines!;
     final List decodedQuillData = jsonDecode(quillData);
@@ -79,31 +79,25 @@ class _QuillReadonlyEditorState extends State<QuillReadonlyEditor> {
     return QuillProvider(
       configurations: QuillConfigurations(
         controller: QuillController(
-        document: Document.fromJson(data),
-        selection: TextSelection.fromPosition(const TextPosition(offset: 0)),
-      ),
+          document: Document.fromJson(data),
+          selection: TextSelection.fromPosition(const TextPosition(offset: 0)),
+        ),
         sharedConfigurations: const QuillSharedConfigurations(
           locale: Locale('en'),
         ),
-
-        
-      ), child:  QuillEditor.basic(
+      ),
+      child: QuillEditor.basic(
           configurations: const QuillEditorConfigurations(
-             readOnly: true,
+        readOnly: true,
         scrollable: false,
         showCursor: false,
         enableInteractiveSelection: false,
         enableSelectionToolbar: false,
-       
         autoFocus: false,
-        scrollPhysics:  NeverScrollableScrollPhysics(),
+        scrollPhysics: NeverScrollableScrollPhysics(),
         expands: false,
         padding: EdgeInsets.zero,
-      
-          )),
+      )),
     );
-  
-    
-  
   }
 }

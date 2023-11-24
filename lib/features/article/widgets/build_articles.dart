@@ -15,21 +15,25 @@ class BuildArticles extends StatelessWidget {
   Widget build(BuildContext context) {
     return articles.isEmpty
         ? const NoArticleMessage()
-        : CustomScrollView(
-            physics: const BouncingScrollPhysics(),
-            slivers: [
-              SliverList.separated(
-                  separatorBuilder: (context, index) {
-                    return const SizedBox(
-                      height: articleGap,
-                    );
-                  },
-                  itemCount: articles.length,
-                  itemBuilder: (context, index) {
-                    final article = articles[index];
-                    return ArticleCard(article: article);
-                  })
-            ],
+        : Container(
+            color: Theme.of(context).colorScheme.tertiary.withOpacity(0.10),
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            child: CustomScrollView(
+              physics: const BouncingScrollPhysics(),
+              slivers: [
+                SliverList.separated(
+                    separatorBuilder: (context, index) {
+                      return const SizedBox(
+                        height: articleGap,
+                      );
+                    },
+                    itemCount: articles.length,
+                    itemBuilder: (context, index) {
+                      final article = articles[index];
+                      return ArticleCard(article: article);
+                    })
+              ],
+            ),
           );
   }
 }

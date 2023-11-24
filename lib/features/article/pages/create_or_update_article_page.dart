@@ -72,6 +72,7 @@ class _CreateOrUpdateArticlePageState extends State<CreateOrUpdateArticlePage> {
     return BlocProvider.value(
       value: _articleCudCubit,
       child: Scaffold(
+          backgroundColor: Colors.grey.shade50,
           body: SafeArea(
             child: BlocListener<ArticleCudCubit, ArticleCudState>(
               listener: (context, state) {
@@ -89,11 +90,11 @@ class _CreateOrUpdateArticlePageState extends State<CreateOrUpdateArticlePage> {
                 }
               },
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
                 child: CustomScrollView(
                   slivers: [
                     SliverAppBar(
+                      backgroundColor: Colors.grey.shade100,
                       actions: [
                         widget.article == null
                             ? CustomElevatedButton(
@@ -119,14 +120,9 @@ class _CreateOrUpdateArticlePageState extends State<CreateOrUpdateArticlePage> {
               ),
             ),
           ),
-
-          //TODO:: 
-          // bottomSheet: MediaQuery.of(context).viewInsets.bottom > 0
-          //     ? _buildQuillToolbar()
-          //     : const SizedBox.shrink()
-              
-              
-              ),
+          bottomSheet: MediaQuery.of(context).viewInsets.bottom > 0
+              ? _buildQuillToolbar()
+              : const SizedBox.shrink()),
     );
   }
 
@@ -173,19 +169,29 @@ class _CreateOrUpdateArticlePageState extends State<CreateOrUpdateArticlePage> {
     return BlocBuilder<QuilToolbarVisibibilityCubit,
         QuilToolbarVisibibilityState>(
       builder: (context, state) {
-        return TextFormField(
-          onTap: () => context
-              .read<QuilToolbarVisibibilityCubit>()
-              .changeVisibility(false),
-          focusNode: _titleFocus,
-          maxLength: 35,
-          maxLines: 2,
-          minLines: 1,
-          keyboardType: TextInputType.multiline,
-          textCapitalization: TextCapitalization.words,
-          controller: _titleController,
-          style: Theme.of(context).textTheme.headlineMedium,
-          decoration: const InputDecoration.collapsed(hintText: 'Title'),
+        return Container(
+          margin: const EdgeInsets.only(bottom: 8),
+          padding: const EdgeInsets.only(top: 14),
+          decoration: BoxDecoration(
+              color: Colors.grey.shade200,
+              borderRadius: BorderRadius.circular(15)),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: TextFormField(
+              onTap: () => context
+                  .read<QuilToolbarVisibibilityCubit>()
+                  .changeVisibility(false),
+              focusNode: _titleFocus,
+              maxLength: 35,
+              maxLines: 2,
+              minLines: 1,
+              keyboardType: TextInputType.multiline,
+              textCapitalization: TextCapitalization.words,
+              controller: _titleController,
+              style: Theme.of(context).textTheme.headlineSmall,
+              decoration: const InputDecoration.collapsed(hintText: 'Title'),
+            ),
+          ),
         );
       },
     );
@@ -197,56 +203,61 @@ class _CreateOrUpdateArticlePageState extends State<CreateOrUpdateArticlePage> {
       builder: (context, state) {
         return Container(
             height: 220,
-            padding: const EdgeInsets.only(top: 10, bottom: 10),
-            child: CustomQuillEditor(
-              onTap: () => context
-                  .read<QuilToolbarVisibibilityCubit>()
-                  .changeVisibility(true),
+            decoration: BoxDecoration(
+                color: Colors.grey.shade200,
+                borderRadius: BorderRadius.circular(15)),
+            child: Padding(
+              padding: const EdgeInsets.all(4),
+              child: CustomQuillEditor(
+                onTap: () => context
+                    .read<QuilToolbarVisibibilityCubit>()
+                    .changeVisibility(true),
 
-              focusNode: _contentFocus,
-              controller: _contentController,
-              // showCursor: state.isKeyboardVisibile,
-              hintText: 'Content',
+                focusNode: _contentFocus,
+                controller: _contentController,
+                // showCursor: state.isKeyboardVisibile,
+                hintText: 'Write about your article...',
+              ),
             ));
       },
     );
   }
 
-
-  //TODO:: need to integrate quill toolbar
-
-  // Widget _buildQuillToolbar() {
-  //   return Builder(builder: (context) {
-  //     return BlocBuilder<QuilToolbarVisibibilityCubit,
-  //         QuilToolbarVisibibilityState>(
-  //       builder: (context, state) {
-  //         return Container(
-  //           color: Colors.grey.shade100,
-  //           padding: const EdgeInsets.only(top: 2, right: 4)
-  //               .copyWith(bottom: MediaQuery.of(context).viewPadding.bottom),
-  //           child: Visibility(
-  //             visible: state.isKeyboardVisibile,
-  //             child: quill.QuillToolbar.basic(
-  //               controller: _contentController,
-  //               multiRowsDisplay: false,
-  //               showRedo: false,
-  //               showUndo: false,
-  //               showLink: false,
-  //               showSearchButton: false,
-  //               showSubscript: false,
-  //               showSuperscript: false,
-  //               showInlineCode: false,
-  //               showListNumbers: false,
-  //               showFontSize: false,
-  //             ),
-  //           ),
-  //         );
-  //       },
-  //     );
-  //   });
-  // }
-
-
+  Widget _buildQuillToolbar() {
+    return Builder(builder: (context) {
+      return BlocBuilder<QuilToolbarVisibibilityCubit,
+          QuilToolbarVisibibilityState>(
+        builder: (context, state) {
+          return Container(
+            color: Colors.grey.shade100,
+            padding: const EdgeInsets.only(top: 2, right: 4)
+                .copyWith(bottom: MediaQuery.of(context).viewPadding.bottom),
+            child: Visibility(
+              visible: state.isKeyboardVisibile,
+              child: quill.QuillProvider(
+                configurations:
+                    quill.QuillConfigurations(controller: _contentController),
+                child: const quill.QuillToolbar(
+                  configurations: quill.QuillToolbarConfigurations(
+                    multiRowsDisplay: false,
+                    showRedo: false,
+                    showUndo: false,
+                    showLink: false,
+                    showSearchButton: false,
+                    showSubscript: false,
+                    showSuperscript: false,
+                    showInlineCode: false,
+                    showListNumbers: false,
+                    showFontSize: false,
+                  ),
+                ),
+              ),
+            ),
+          );
+        },
+      );
+    });
+  }
 
   void _createArticle() {
     final plainContent = _contentController.document.toPlainText();

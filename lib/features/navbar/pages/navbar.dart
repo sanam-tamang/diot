@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:devmandu/core/config/theme/app_colors.dart';
+import 'package:devmandu/core/widgets/annoted_region.dart';
 import 'package:devmandu/features/message/pages/messaged_user_page.dart';
 
 import 'package:flutter/material.dart';
@@ -55,14 +56,17 @@ class _NavBarPageState extends State<NavBarPage>
   }
 
   Widget _buildNavbarBody() {
-    return InternetCheckerWidget(
-        child: PageView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            controller: _pageController,
-            itemCount: _widgets.length,
-            itemBuilder: (context, index) {
-              return _widgets[index];
-            }));
+    return CustomAnnotatedRegion(
+      color: Colors.grey.shade100,
+      child: InternetCheckerWidget(
+          child: PageView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              controller: _pageController,
+              itemCount: _widgets.length,
+              itemBuilder: (context, index) {
+                return _widgets[index];
+              })),
+    );
   }
 
   Widget _buildBottomNavigationBar() {
