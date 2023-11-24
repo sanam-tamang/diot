@@ -16,6 +16,7 @@ class CustomCacheNetworkImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return imageUrl != null
         ? CachedNetworkImage(
+            fit: fit,
             imageUrl: imageUrl!,
             placeholder: (context, url) => Container(
               color: Colors.grey.shade200,

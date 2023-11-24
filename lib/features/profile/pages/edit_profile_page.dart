@@ -273,7 +273,7 @@ class _EditProfileTextField extends StatelessWidget {
             textInputType: TextInputType.multiline,
             hintText: 'Write about yourself...',
             controller: bioController,
-            label: 'Bio',
+            label: 'Intro yourself',
             maxLength: 160,
             maxLines: 6,
           ),

@@ -63,7 +63,7 @@ class _BuildProfileBodyState extends State<BuildProfileBody> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Bio",
+                  "Intro",
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
                 Text(widget.user.bio!.replaceNewLineUpTo2(),

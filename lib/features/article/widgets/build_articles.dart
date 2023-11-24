@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/config/size.dart';
-import '../../../core/widgets/no_article_widget.dart';
 import '../../article/widgets/article_card.dart';
 import '../models/article.dart';
 
@@ -13,27 +12,25 @@ class BuildArticles extends StatelessWidget {
   final List<GetArticle> articles;
   @override
   Widget build(BuildContext context) {
-    return articles.isEmpty
-        ? const NoArticleMessage()
-        : Container(
-            color: Theme.of(context).colorScheme.tertiary.withOpacity(0.10),
-            padding: const EdgeInsets.symmetric(horizontal: 4),
-            child: CustomScrollView(
-              physics: const BouncingScrollPhysics(),
-              slivers: [
-                SliverList.separated(
-                    separatorBuilder: (context, index) {
-                      return const SizedBox(
-                        height: articleGap,
-                      );
-                    },
-                    itemCount: articles.length,
-                    itemBuilder: (context, index) {
-                      final article = articles[index];
-                      return ArticleCard(article: article);
-                    })
-              ],
-            ),
-          );
+    return Container(
+      color: Theme.of(context).colorScheme.tertiary.withOpacity(0.10),
+      padding: const EdgeInsets.symmetric(horizontal: 4),
+      child: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
+        slivers: [
+          SliverList.separated(
+              separatorBuilder: (context, index) {
+                return const SizedBox(
+                  height: articleGap,
+                );
+              },
+              itemCount: articles.length,
+              itemBuilder: (context, index) {
+                final article = articles[index];
+                return ArticleCard(article: article);
+              })
+        ],
+      ),
+    );
   }
 }

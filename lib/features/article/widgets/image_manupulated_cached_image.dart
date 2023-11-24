@@ -19,14 +19,8 @@ class ManupulatedCachedNetworkImage extends StatelessWidget {
         imageUrl != null
             ? ClipRRect(
                 borderRadius: BorderRadius.circular(borderRadius),
-                child: Container(
-                  constraints: BoxConstraints(
-                    minHeight: 100,
-                    maxHeight: MediaQuery.of(context).size.height * 0.6,
-                  ),
-                  child: CustomCacheNetworkImage(
-                    imageUrl: imageUrl,
-                  ),
+                child: CustomCacheNetworkImage(
+                  imageUrl: imageUrl,
                 ),
               )
             : const SizedBox.shrink(),
