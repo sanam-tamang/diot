@@ -5,8 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../auth/blocs/user_cubit/user_cubit.dart';
 
-
-///this will help to redirect the page base on 
+///this will help to redirect the page base on
 ///user state
 class LoadRQM extends StatefulWidget {
   const LoadRQM({super.key});
@@ -21,6 +20,14 @@ class _LoadRQMState extends State<LoadRQM> {
     context.read<UserCubit>().currentUser();
     super.initState();
   }
+
+  @override
+  void didChangeDependencies() {
+    precacheImage(const ExactAssetImage("assets/icons/logo.png"), context);
+    super.didChangeDependencies();
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
