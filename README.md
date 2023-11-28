@@ -58,7 +58,17 @@
     <li>Clone the repository:
         <pre><code>git clone https://github.com/sanam-tamang/diot.git</code></pre>
     </li>
+     <li>Download dependencies:
+        <pre><code>flutter pub get</code></pre>
+    </li>
+      <li>Run Fluter app:
+        <pre><code>Flutter run</code></pre>
+    </li>
+
+    
 </ol>
+
+<p> Alternative, you can download application from  <a href="project_app/app-release.apk"> here </a> </p>
 
 </body>
 </html>
