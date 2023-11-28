@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diot App</title>
-</head>
-<body>
+
 
 <h1>Diot App</h1>
 
@@ -68,7 +61,6 @@
     
 </ol>
 
-<p> Alternative, you can download application from  <a href="project_app/app-release.apk"> here </a> </p>
+<p> Alternative, you can directly download android app from  <a href="https://github.com/sanam-tamang/diot/blob/main/project_app/app-release.apk"> here </a> </p>
 
-</body>
-</html>
+
