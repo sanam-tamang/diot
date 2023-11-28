@@ -1,19 +1,64 @@
-<h1>Diote - a blog app</h1> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diot App</title>
+</head>
+<body>
 
-<h4>It has features of <h4>
-<ul>
-<li>Sign up/ Sign In</li>
-<li>Article publishing with rich text</li>
-<li>User profile</li>
-<li>Follow/UnFollow</li>
-<li>Like and Comment article</li>
-<li>Chatting</li>
-<li>Searching & many more</li>
-<ul>
+<h1>Diot App</h1>
 
-<center>
-<img height ="600" src="project_image/114.jpg"><br>
-<img height ="600" src="project_image/111.jpg"><br>
-<img height ="600" src="project_image/112.jpg"><br>
-<img height ="600" src="project_image/113.jpg"><br>
-</center>
+<p>Diot is a dynamic Flutter application that provides a comprehensive set of features for seamless user interaction and content sharing.</p>
+
+<h2>Features:</h2>
+
+<h3>Sign Up / Sign In:</h3>
+<p>Effortlessly create and authenticate your account with a straightforward sign-up/sign-in process.</p>
+<img src="project_images/1.jpeg" alt="Sign Up / Sign In" height="600">
+<img src="project_images/2.jpeg" alt="Login" height="600">
+<img src="project_images/3.jpeg" alt="User Verification" height="600">
+
+<h3>Show published article</h3>
+<p>.</p>
+<img src="project_images/4.jpeg" alt="Home" height="600">
+<img src="project_images/5.jpeg" alt="Article Detail with Comment" height="600">
+<img src="project_images/8.jpeg" alt="Article Detail" height="600"> <br>
+<h3>User Profile:</h3>
+<p>View and personalize your user profile.</p>
+<img src="project_images/6.jpeg" alt="User Profile" height="600">
+<img src="project_images/9.jpeg" alt="Own User Profile" height="600">
+
+
+
+<h3>Chatting:</h3>
+<p>Foster real-time communication with other users.</p>
+<img src="project_images/12.jpeg" alt="Chatting (1)" height="600">
+<img src="project_images/13.jpeg" alt="Chatting (2)" height="600">
+<img src="project_images/14.jpeg" alt="Chatting (3)" height="600">
+
+<h3>Searching:</h3>
+<p>Efficiently search for articles and users.</p>
+<img src="project_images/7.jpeg" alt="Article Searching" height="600">
+
+
+
+<h3>Article Posting Field:</h3>
+<p>Create articles with a title and a rich text editor for detailed descriptions.</p>
+<img src="project_images/10.jpeg" alt="Article Posting Field (1)" height="600">
+<img src="project_images/11.jpeg" alt="Article Posting Field (2)" height="600">
+<h3>Follow/Unfollow:</h3>
+<p>Connect with other users through a simple follow/unfollow mechanism.</p>
+
+<h3>Like and Comment Article:</h3>
+<p>Engage with articles through likes and comments.</p>
+<h2>Getting Started:</h2>
+
+<ol>
+    <li>Clone the repository:
+        <pre><code>git clone https://github.com/sanam-tamang/diot.git</code></pre>
+    </li>
+</ol>
+
+</body>
+</html>

@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
         providers: BlocProviderData.all,
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Diot',
+          title: 'Diote',
           theme: AppTheme.lightTheme(),
           initialRoute: AppRouteName.loadRQM,
           onGenerateRoute: AppRoute.onGenerateRoute,
